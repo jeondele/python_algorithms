@@ -23,7 +23,7 @@ def solution(participant, completion):
 
 #### 다른 사람 풀이
 
-##### import collections 의 counter 를 쓰면 알아서 해시맵 완성 됨 + 차집합 , 합집합 , 교집합 기능 도 있음 
+##### import collections 의 counter 를 쓰면 알아서 리스트를 해시맵 완성 됨 + 차집합 , 합집합 , 교집합 기능 도 있음 
 
 import collections
 
