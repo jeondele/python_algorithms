@@ -3,7 +3,6 @@
 #https://programmers.co.kr/learn/courses/30/lessons/42579
 
 #### 나의 풀이
-
 genres=["classic","classic","classic","classic","pop"]
 plays=[500,150,800,800,2500]
 
