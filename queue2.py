@@ -1,4 +1,5 @@
-# max함수에 리스트 객체가 NOne 이면 런타임 에러
+# max함수에 리스트 객체의 길이가 0 이면 런타임 에러
+# 리스트 객체의 빈 리스트는 None 값이 False 임... 빈리스트 인지 비교는 len()으로 해야함
 def solution(priorities, location):
     idx_list = [i for i in range(len(priorities))]
     answer = 0
