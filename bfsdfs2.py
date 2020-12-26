@@ -5,7 +5,6 @@ def dfs(computers, visited, v):
     if visited[v] == 0:
         visited[v] = 1
     for e in range(len(computers)):
-        print("e ::: " , e )
         if computers[v][e] == 1 and visited[e] == 0:
             dfs2(computers, visited, e)
 
