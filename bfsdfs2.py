@@ -6,7 +6,7 @@ def dfs(computers, visited, v):
         visited[v] = 1
     for e in range(len(computers)):
         if computers[v][e] == 1 and visited[e] == 0:
-            dfs2(computers, visited, e)
+            dfs(computers, visited, e)
 
 def solution(n, computers):
     visited = [0] * n
@@ -15,6 +15,6 @@ def solution(n, computers):
         for i in range(n):
             if visited[i] == 0:
                 print("i ::: " ,  i)
-                dfs2(computers, visited, i)
+                dfs(computers, visited, i)
                 ans += 1
     return ans
