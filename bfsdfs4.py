@@ -1,3 +1,5 @@
+#프로그래머스 dfsbfs 1번. 타겟 넘버
+
 numbers = [1, 1, 1, 1, 1]	
 target = 3
 

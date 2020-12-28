@@ -5,7 +5,7 @@
 # 최단 거리는 bfs
 from collections import deque
 
-def dfs(x, y) :
+def bfs(x, y) :
     queue = deque()
     queue.append((x, y))
     while queue :
@@ -31,5 +31,5 @@ for _ in range(N) :
 dx = [-1, 1, 0, 0]
 dy = [0, 0, -1, 1]
 
-print(dfs(0, 0))
+print(bfs(0, 0))
 
