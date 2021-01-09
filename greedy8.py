@@ -1,5 +1,9 @@
-# 프로그래머스 5번. 섬 연결하기(미결)
-# kruskal 알고리즘을 활용해야 풀수있을듯.. 미결상태
+# 프로그래머스 5번. 섬 연결하기(완료)
+# kruskal 알고리즘
+# 연결된 노드들의 set을 만든다.
+# 살피는 node가 set에 존재한다면 연결됐다고 보고 pass
+# 하나라도 연결되지 않은 점이 있다면 set 에 포함 시킨 후 해당 node는 삭제
+# 모든 점이 연결될때까지 반복.
 n = 4	
 costs = [[0,1,1],[0,2,2],[1,2,5],[1,3,1],[2,3,8]]
 n = 5
@@ -13,6 +17,25 @@ costs = [[0,1,5],[1,2,3],[2,3,3],[3,1,2],[3,0,4],[2,4,6],[4,0,7]]
 n=6
 costs = [[0, 1, 5], [0, 3, 2], [0, 4, 3], [1, 4, 1], [3, 4, 10], [1, 2, 2], [2, 5, 3], [4, 5, 4]]
 #답 11
+
+
+def solution_kruskal(n, costs):
+    # kruskal algorithm
+    ans = 0
+    costs.sort(key = lambda x: x[2]) # cost 기준으로 오름차순 정렬
+    routes = set([costs[0][0]]) # 집합
+    while len(routes)!=n:
+        for i, cost in enumerate(costs):
+            if cost[0] in routes and cost[1] in routes:
+                continue
+            if cost[0] in routes or cost[1] in routes:
+                routes.update([cost[0], cost[1]])
+                ans += cost[2]
+                costs[i] = [-1, -1, -1]
+                break
+    return ans
+
+
 def bfs(start, node, costs , visited):
     #print(start[0])
     queue =[start]
