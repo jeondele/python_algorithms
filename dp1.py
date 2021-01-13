@@ -61,3 +61,34 @@ def ant(nput_val) :
   return dp[n]
 
 print(dp[n-1])
+
+#예제 2. 1로 만들기
+d_1 = [0]* 30001
+#bottom-up
+for i in range(2, x+1) :
+  d_1[i] = d_1[i-1] + 1
+  if i % 2 == 0 :
+    d_1[i] = min(d_1[i] , d_1[i//2] +1)
+  if i % 3 == 0 :
+    d_1[i] = min(d_1[i] , d_1[i//3] +1)   
+  if i % 5 == 0 :
+    d_1[i] = min(d_1[i] , d_1[i//5] +1)  
+print(d[x])
+
+#예제 3. 효율적인 화폐구성
+n = 3
+m = 7
+array = [2, 3, 5]
+d= [10001] * (m+1)
+d[0] = 0
+for i in range(n) :
+  for j in range(array[i], m+1) :
+    if(d[j - array[i] ] != 10001 :
+      d[j] = min(d[j], d[j-array[i]] +1 )
+
+if d[m] == 10001 :
+  print(-1)
+else :
+  print(d[m])
+
+#예제 4. 금광문제는 따로 풀어보기  
