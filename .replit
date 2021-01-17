@@ -1,2 +1,2 @@
 language = "bash"
-run = "echo hello world"
+run = "python3 sort2.py"
