@@ -1,4 +1,5 @@
 #프로그래머스 우선순위큐 1번. 더 맵게
+
 import heapq
 
 def solution(scoville, K):
