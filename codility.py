@@ -1,6 +1,33 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
 
+def solution(A):
+    arr = []
+    sum_a = sum(A)
+    for i in range(len(A)-1) :
+        x = sum(A[:i+1])
+        diff = abs((x*2) - sum_a)
+        if diff == 0 :
+            return 0
+        arr.append(diff)
+    return min(arr) 
+def solutionPermMissingElem(A):
+    flag = ['False'] * (len(A) + 2)
+    for i in A :
+        flag[i] = 'True'
+    for idx, i in enumerate(flag) :
+        if idx > 0 and i == 'False' :
+            return idx 
+    return None 
+
+import math
+def solutionFrogJmp(X, Y, D):
+    if Y- X <= 0 :
+        return 0
+    return math.ceil((Y-X)/D) 
+
+
+
 def solutionOddOccurrencesInArray(A):
     dict_a = {}
     for i in A :
