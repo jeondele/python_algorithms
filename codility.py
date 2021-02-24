@@ -1,16 +1,36 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
+def solutionFrogRiverOne(X, A):
+    if X > len(A) :
+        return -1 
+    flag = [False] * (X+1)
+    flag[0] = True
+    sx = (X * (X+1)) / 2
+    for idx , i in enumerate(A) :
+        if flag[i] == False :
+            flag[i] = True
+            sx -= i
+            # 배열에서 False가 있는지 체크하면 그만큼 연산 소요가 많이됨
+            #if idx >= (X-1) and False not in flag :
+            if sx == 0 :
+                return idx      
+    return -1
 
-def solution(A):
+def solutionTapeEquilibrium(A):
+    #sum을 연산하면 O(n) 만큼 사용
+    #리슷트의 길이가 10만 이상일때는 O(N^2)이니 조심
     arr = []
+    sum_init = 0 
     sum_a = sum(A)
     for i in range(len(A)-1) :
-        x = sum(A[:i+1])
-        diff = abs((x*2) - sum_a)
+        sum_init = sum_init + A[i]
+        gap = sum_a - sum_init
+        diff = abs(sum_init - gap)
         if diff == 0 :
             return 0
         arr.append(diff)
     return min(arr) 
+ 
 def solutionPermMissingElem(A):
     flag = ['False'] * (len(A) + 2)
     for i in A :
