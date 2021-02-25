@@ -1,5 +1,22 @@
 # you can write to stdout for debugging purposes, e.g.
 # print("this is a debug message")
+def solutionMaxCounters(N, A):
+    list_a = [0] * N
+    cnt = 0 
+    for idx , i in enumerate(A) :
+        if i <= N : 
+            break
+        if idx == len(A)-1 :
+            return list_a
+    for i in A :
+        if i > N : 
+            list_a = [cnt] * N
+        else :
+            list_a[i-1] += 1
+            if list_a[i-1] > cnt :
+                cnt = list_a[i-1] 
+    return list_a 
+    
 def solutionFrogRiverOne(X, A):
     if X > len(A) :
         return -1 
